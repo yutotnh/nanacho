@@ -56,7 +56,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 550,
         "resizable": true,
         "title": "nanacho",
         "width": 800
