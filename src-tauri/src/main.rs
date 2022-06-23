@@ -150,7 +150,7 @@ struct NanacoResult {
 }
 
 #[tauri::command]
-fn register_nanaco_gift(message: NanacoMessage) -> Result<NanacoResult, String> {
+async fn register_nanaco_gift(message: NanacoMessage) -> Result<NanacoResult, String> {
     let options = LaunchOptionsBuilder::default()
         .window_size(Some((200, 200)))
         .headless(false)
