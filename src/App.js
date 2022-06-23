@@ -58,6 +58,7 @@ function App() {
   const callRust = () => {
     get_gifts().forEach((gift) => {
       document.getElementById("submit").value = "登録中";
+      document.getElementById("gifts").readOnly = true;
       invoke("register_nanaco_gift", {
         message: {
           number: document.getElementById("nanaco_number").value,
@@ -72,9 +73,10 @@ function App() {
             gift,
             `${gift} -> ${message.message}`
           );
-          console.log(textarea.value.match(/^[^\s]{16}$/gm))
+          console.log(textarea.value.match(/^[^\s]{16}$/gm));
           if (!textarea.value.match(/^[^\s]{16}$/gm)) {
             document.getElementById("submit").value = "登録完了";
+            document.getElementById("gifts").readOnly = false;
           }
         })
         .catch((message) => {
